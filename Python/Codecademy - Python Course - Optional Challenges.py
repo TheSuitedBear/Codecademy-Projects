@@ -170,3 +170,68 @@ print(max_num(-5, -10, -10))
 # should print -5
 print(max_num(2, 3, 3))
 # should print "It's a tie!"
+
+
+
+# Takes a list and adds the lists length to the end of the list and returns it
+
+def append_size(my_list):
+  list_length = len(my_list)
+  my_list.append(list_length)
+  return my_list
+
+print(append_size([23, 42, 108]))
+# Should print [23, 42, 108, 3]
+
+
+
+# Function takes a list, gets the sum of the last 2 values in the list, and adds it onto the end of the list, it then does this 2 more times before returning the list
+
+def append_sum(added_list):
+  for i in range(3):
+    added_list.append(added_list[-1] + added_list[-2])
+  return added_list
+
+print(append_sum([1, 1, 2]))
+# Should print [1, 1, 2, 3, 5, 8]
+print(append_sum([1, 4, 9]))
+# Should print [1, 4, 9, 13, 22, 35]
+
+
+
+# This function compares 2 lists, if one list has more elements than the other, the last element of the longer list is returned, if both lists are equal, it returns list 1's last element.
+
+def larger_list(my_list1, my_list2):
+  if len(my_list1) > len(my_list2):
+    return my_list1[-1]
+  elif len(my_list2) > len(my_list1):
+    return my_list2[-1]
+  else:
+    return my_list1[-1]
+
+print(larger_list([4, 10, 2, 5], [-10, 2, 5, 10]))
+# Should print 5
+
+
+
+# This function takes a list of numbers, and returns true if the specified number in "item" is in the list more than "n" times, otherwise it returns false/
+
+def more_than_n(product_list, item, n):
+  if product_list.count(item) > n:
+    return True
+  else:
+    return False
+
+print(more_than_n([2, 4, 6, 2, 3, 2, 1, 2], 2, 3))
+# Should return True
+
+
+
+# This function combines 2 seperate lists and then returns that combined list, after sorting in numerical order.
+
+def combine_sort(my_list1, my_list2):
+  new_list = my_list1 + my_list2
+  return sorted(new_list)
+
+print(combine_sort([4, 10, 2, 5], [-10, 2, 5, 10]))
+# Should print [-10, 2, 2, 4, 5, 5, 10, 10]
