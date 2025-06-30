@@ -214,7 +214,7 @@ print(larger_list([4, 10, 2, 5], [-10, 2, 5, 10]))
 
 
 
-# This function takes a list of numbers, and returns true if the specified number in "item" is in the list more than "n" times, otherwise it returns false/
+# This function takes a list of numbers, and returns true if the specified number in "item" is in the list more than "n" times, otherwise it returns false.
 
 def more_than_n(product_list, item, n):
   if product_list.count(item) > n:
@@ -235,3 +235,75 @@ def combine_sort(my_list1, my_list2):
 
 print(combine_sort([4, 10, 2, 5], [-10, 2, 5, 10]))
 # Should print [-10, 2, 2, 4, 5, 5, 10, 10]
+
+
+
+# Checks how many numbers in a list of numbers are divisible by 10 without decimels, then returns the total number
+
+def divisible_by_ten(nums):
+  counter = 0
+  for i in nums:
+    if i % 10 == 0:
+      counter += 1
+    else:
+      continue
+  return counter
+
+print(divisible_by_ten([20, 25, 30, 35, 40]))
+# Should return 3
+
+
+
+# Takes a list of names and appends a greeting to each individual to a list called "greetings", then returns the list
+
+def add_greetings(names):
+  greetings = []
+  for i in names:
+    greetings.append('Hello, ' + i)
+  return greetings
+
+print(add_greetings(["Owen", "Max", "Sophie"]))
+# Should return ['Hello, Owen', 'Hello, Max', 'Hello, Sophie']
+
+
+
+# Function goes through a list of numbers and for each even number at the start of the list it removes it until it reaches an odd number as its first number, in which case it returns the finalised list
+
+def delete_starting_evens(my_list):
+  while len(my_list) > 0 and my_list[0] % 2 == 0:
+    my_list = my_list[1:]
+  return my_list
+
+print(delete_starting_evens([4, 8, 10, 11, 12, 15]))
+# Should print [11, 12, 15]
+print(delete_starting_evens([4, 8, 10]))
+# Should print []
+
+
+
+# This function takes a list of numbers and adds all numbers with an odd index to a new list, because of the way indexes work, this would mean the 2nd number would be first, then the 4th, etc.
+
+def odd_indices(my_list):
+  new_list = []
+  for i in range(1, len(my_list), 2):
+    new_list.append(my_list[i])
+  return new_list
+  
+print(odd_indices([4, 3, 7, 10, 11, -2]))
+# Should print [3, 10, -2]
+
+
+
+# Function takes 2 lists, the first being base numbers, and the second being a list of powers, the function iterates through each base, multiplying it to the power of each number in "powers", it does this with every number with every power.
+
+def exponents(bases, powers):
+  new_list = []
+  for i in bases:
+    for a in powers:
+      new_list.append(i ** a)
+  return new_list
+  
+print(exponents([2, 3, 4], [1, 2, 3]))
+# Should return [2, 4, 8, 3, 9, 27, 4, 16, 64]
+print(exponents([3, 5, 7, 9], [2, 4, 6, 8]))
+# Should return [9, 81, 729, 6561, 25, 625, 15625, 390625, 49, 2401, 117649, 5764801, 81, 6561, 531441, 43046721]
