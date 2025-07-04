@@ -307,3 +307,114 @@ print(exponents([2, 3, 4], [1, 2, 3]))
 # Should return [2, 4, 8, 3, 9, 27, 4, 16, 64]
 print(exponents([3, 5, 7, 9], [2, 4, 6, 8]))
 # Should return [9, 81, 729, 6561, 25, 625, 15625, 390625, 49, 2401, 117649, 5764801, 81, 6561, 531441, 43046721]
+
+
+
+# Function adds up the sum of 2 different lists and returns the list that has the higher total sum, if both lists are equal in value then it returns list 1
+
+def larger_sum(lst1, lst2):
+  total1 = 0
+  total2 = 0
+  for i in lst1:
+    total1 = total1 + i
+  for e in lst2:
+    total2 = total2 + e
+  if total1 > total2:
+    return lst1
+  elif total2 > total1:
+    return lst2
+  else:
+    return lst1
+
+print(larger_sum([1, 9, 5], [2, 3, 7]))
+# Should return [1, 9, 5]
+
+# More condesed version of the prior challenge using the sum() function
+def large_sum_one_line(lst3, lst4):
+  if sum(lst3) >= sum(lst4):
+    return lst3
+  else:
+    return lst4
+
+print(large_sum_one_line([5, 7, 4], [2, 4, 8]))
+# Should return [5, 7, 4]
+
+
+
+# Function takes a list as an input and adds the numbers to the total sum one at a time until either the list is finished or the number exceeds 9000 by any amount, in which case the total number is returned
+
+def over_nine_thousand(lst):
+  total = 0
+  for i in lst:
+    total += i
+    if total > 9000:
+      break
+  return total
+
+print(over_nine_thousand([8000, 900, 120, 5000]))
+# Should return 9020
+
+
+
+# A function that takes a list of numbers and returns the largest number from the list, this can be simplified with max() but for this challenge I was required to do it manually, a version using the max() function can be found below this solution
+
+def max_num(nums):
+  big_num = nums[0]
+  for i in nums:
+    if i > big_num:
+      big_num = i
+  return big_num
+
+print(max_num([50, -10, 0, 75, 20]))
+# Should return 75
+
+# Condensed version with max()
+
+def max_num_condense(nums):
+  return max(nums)
+
+print(max_num_condense([10, 20, 45, -50, 4, 60, 100, 25]))
+# Should return 100
+
+
+
+# Function takes 2 lists, compares each index on both lists one by one, and if the numbers of the same index match, it adds the index to a list called "index" and then returns the list at the end
+
+def same_values(lst1, lst2):
+  index = []
+  for count in range(0, len(lst1)):
+    if lst1[count] == lst2[count]:
+      index.append(count)
+  return index
+
+print(same_values([5, 1, -10, 3, 3], [5, 10, -10, 3, 5]))
+# Should return [0, 2, 3]
+
+
+
+# This function takes 2 lists, and checks whether a list 1 is the same as list 2 in reverse, it does this by checking each index vs the opposite index on list 2 by using a specific equation to ensure we are at the right index
+
+def reversed_list(lst1, lst2):
+  for i in range(len(lst1)):
+    if lst1[i] != lst2[len(lst2) - 1 - i]:
+      return False
+  return True
+
+print(reversed_list([1, 2, 3], [3, 2, 1]))
+# Should return True
+print(reversed_list([1, 5, 3], [3, 2, 1]))
+# Should return False
+
+# Simplified version of the code above
+
+def reversed_list_simple(lst1, lst2):
+  lst2_reverse = list(reversed(lst2))
+  if lst1 != lst2_reverse:
+    return False
+  else:
+    return True
+
+print(reversed_list_simple([5, 6, 7], [7, 6, 5]))
+# Should return True
+print(reversed_list_simple([5, 6, 7], [7, 8, 5]))
+# Should return False
