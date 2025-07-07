@@ -418,3 +418,81 @@ print(reversed_list_simple([5, 6, 7], [7, 6, 5]))
 # Should return True
 print(reversed_list_simple([5, 6, 7], [7, 8, 5]))
 # Should return False
+
+
+
+# Takes an input and returns the number to the power of 10
+
+def tenth_power(num):
+  return num ** 10
+
+print(tenth_power(1))
+# 1 to the 10th power is 1
+print(tenth_power(0))
+# 0 to the 10th power is 0
+print(tenth_power(2))
+# 2 to the 10th power is 1024
+
+
+
+# Takes an input and returns the square root of the input
+
+def square_root(num):
+  return num ** 0.5
+
+print(square_root(16))
+# Should return 4
+print(square_root(100))
+# Should return 10
+
+
+
+# Calculates the average win rates based on how many games were won and lost
+
+def win_percentage(wins, losses):
+  total_games = wins + losses
+  win_rate = 100 / total_games * wins
+  return win_rate
+
+print(win_percentage(5, 5))
+# Should return 50
+print(win_percentage(10, 0))
+# Should return 100
+print(win_percentage(17, 23))
+# Should return 42.5
+
+
+
+# Takes 2 numbers and returns the average
+
+def average(num1, num2):
+  combined = num1 + num2
+  average_num = combined / 2
+  return average_num
+
+print(average(1, 100))
+# The average of 1 and 100 is 50.5
+print(average(1, -1))
+# The average of 1 and -1 is 0
+
+# Simplified version
+
+def average_simple(num1, num2):
+  return (num1 + num2) / 2
+
+print(average_simple(5, 50))
+# Should return 27.5
+
+
+
+# Returns the remainder of 2 numbers, in which the first value was multipled by 2, and the second being divided by 2
+
+def remainder(num1, num2):
+  new_one = num1 * 2
+  new_two = num2 / 2
+  return int(new_one % new_two)
+
+print(remainder(15, 14))
+# Should return 2
+print(remainder(9, 6))
+# Should return 0
