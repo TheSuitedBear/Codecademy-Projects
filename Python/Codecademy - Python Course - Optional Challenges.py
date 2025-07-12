@@ -543,11 +543,11 @@ def introduction(first_name, last_name):
   return last_name + ", " + first_name + " " + last_name
 
 print(introduction("James", "Bond"))
-# should print Bond, James Bond
+# Should print Bond, James Bond
 print(introduction("Maya", "Angelou"))
-# should print Angelou, Maya Angelou
+# Should print Angelou, Maya Angelou
 print(introduction("Callum", "Smith"))
-
+# Should print Smith, Callum Smith
 
 
 # Takes a name and age, and calculates how old they would be in dog years
