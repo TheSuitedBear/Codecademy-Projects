@@ -1,0 +1,2 @@
+def generate_time_travel_message(year, destination, cost):
+  return "You will be travelling to Year {year}, arriving in {destination}, for a price of {cost} pounds.".format(year=year, destination=destination, cost=cost)
