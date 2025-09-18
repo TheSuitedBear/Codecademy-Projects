@@ -26,7 +26,7 @@ total_travel_cost = round(total_travel_cost, 2)
 # print(total_travel_cost)
 
 # A list of destinations which can be expanded or appended if need be
-destination_list = ["Madrid", "London", "Los Angeles", "Chongqing"]
+destination_list = ["Madrid", "London", "San Fransisco", "Chongqing", "Rio De Janiro"]
 
 destination_choice = choice(destination_list)
 # print(destination_choice)
