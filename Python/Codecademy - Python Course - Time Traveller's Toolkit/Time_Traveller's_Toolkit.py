@@ -2,7 +2,7 @@ import datetime as dt
 from decimal import Decimal
 from random import randint
 from random import choice
-from custom_module import generate_time_travel_message
+from Custom_Module import generate_time_travel_message
 
 # print(dt.date.today())
 # print(dt.datetime.now().time())
