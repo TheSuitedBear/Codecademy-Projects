@@ -578,3 +578,25 @@ print(lots_of_math(1, 2, 3, 4))
 # should print 3, -1, -3, 0
 print(lots_of_math(1, 1, 1, 1))
 # should print 2, 0, 0, 0
+
+
+
+# Counts each unique letter in a word/sentence and returns the final count, uppercase and lowercase are counted as seperate letters.
+
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
+def unique_english_letters(word):
+  letter_index = []
+  count = 0
+  for letter in word:
+    if letter in letter_index:
+      continue
+    else:
+      letter_index.append(letter)
+      count += 1
+  return count
+
+print(unique_english_letters("mississippi"))
+# should print 4
+print(unique_english_letters("Apple"))
+# should print 4
