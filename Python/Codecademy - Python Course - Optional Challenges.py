@@ -763,3 +763,83 @@ print(add_exclamation("Codecademy"))
 # should print Codecademy!!!!!!!!!!
 print(add_exclamation("Codecademy is the best place to learn"))
 # should print Codecademy is the best place to learn
+
+
+
+# Returns the sum of all the values in a dictionary.
+
+def sum_values(my_dictionary):
+  count = 0
+  for i in my_dictionary.values():
+    count += i
+  return count
+
+print(sum_values({"milk":5, "eggs":2, "flour": 3}))
+# should print 10
+print(sum_values({10:1, 100:2, 1000:3}))
+# should print 6
+
+
+
+# Returns the sum of values from keys that are even numbers.
+
+def sum_even_keys(my_dictionary):
+  total = 0
+  for i in my_dictionary.keys():
+    if i % 2 == 0:
+      total += my_dictionary[i]
+  return total
+
+print(sum_even_keys({1:5, 2:2, 3:3}))
+# should print 2
+print(sum_even_keys({10:1, 100:2, 1000:3}))
+# should print 6
+
+
+
+# Adds 10 to each value in a dictionary.
+
+def add_ten(my_dictionary):
+  for i in my_dictionary.keys():
+    my_dictionary[i] += 10
+  return my_dictionary
+
+print(add_ten({1:5, 2:2, 3:3}))
+# should print {1:15, 2:12, 3:13}
+print(add_ten({10:1, 100:2, 1000:3}))
+# should print {10:11, 100:12, 1000:13}
+
+
+
+# Returns a list of keys that are also values in other parts of a dictionary.
+
+def values_that_are_keys(my_dictionary):
+  total = []
+  for value in my_dictionary.values():
+    for key in my_dictionary.keys():
+      if value == key:
+        total.append(value)
+  return total
+
+print(values_that_are_keys({1:100, 2:1, 3:4, 4:10}))
+# should print [1, 4]
+print(values_that_are_keys({"a":"apple", "b":"a", "c":100}))
+# should print ["a"]
+
+
+
+# Iterates through a dictionary and returns the key with the largest value associated with it.
+
+def max_key(my_dictionary):
+  largest_key = float("-inf")
+  largest_value = float("-inf")
+  for key, value in my_dictionary.items():
+    if value > largest_value:
+      largest_key = key
+      largest_value = value
+  return largest_key
+
+print(max_key({1:100, 2:1, 3:4, 4:10}))
+# should print 1
+print(max_key({"a":100, "b":10, "c":1000}))
+# should print "c"
