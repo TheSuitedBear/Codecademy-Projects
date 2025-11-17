@@ -843,3 +843,74 @@ print(max_key({1:100, 2:1, 3:4, 4:10}))
 # should print 1
 print(max_key({"a":100, "b":10, "c":1000}))
 # should print "c"
+
+
+
+# Function takes a list of strings and creates a dictionary, the keys being the different strings, and the values being the length of each string it's associated with.
+
+def word_length_dictionary(words):
+  final_dict = {}
+  for word in words:
+    final_dict[word] = len(word)
+  return final_dict
+
+print(word_length_dictionary(["apple", "dog", "cat"]))
+# should print {"apple":5, "dog": 3, "cat":3}
+print(word_length_dictionary(["a", ""]))
+# should print {"a": 1, "": 0}
+
+
+
+# Function takes a list of strings and creates a dictionary based on how frequently each word is in the list
+
+def frequency_dictionary(words):
+  complete_dict = {}
+  for word in words:
+    if word in complete_dict:
+      complete_dict[word] += 1
+    else:
+      complete_dict[word] = 1
+  return complete_dict
+
+print(frequency_dictionary(["apple", "apple", "cat", 1]))
+# should print {"apple":2, "cat":1, 1:1}
+print(frequency_dictionary([0,0,0,0,0]))
+# should print {0:5}
+
+
+
+# Takes a dictionary as an input and returns a count of how many unique values are present.
+
+def unique_values(my_dictionary):
+  count = 0
+  value_list = []
+  for value in my_dictionary.values():
+    if value not in value_list:
+      value_list.append(value)
+      count += 1
+    else:
+      continue
+  return count
+
+print(unique_values({0:3, 1:1, 4:1, 5:3}))
+# should print 2
+print(unique_values({0:3, 1:3, 4:3, 5:3}))
+# should print 1
+
+
+
+# Creates a new dictionary with the keys being the first letter of last names, and the value being how many people from a list have that letter as the start of their last name.
+
+def count_first_letter(names):
+  letters = {}
+  for key in names:
+    letter_one = key[0]
+    if letter_one not in letters:
+      letters[letter_one] = 0
+    letters[letter_one] += len(names[key])
+  return letters
+
+print(count_first_letter({"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Lannister": ["Jaime", "Cersei", "Tywin"]}))
+# should print {"S": 4, "L": 3}
+print(count_first_letter({"Stark": ["Ned", "Robb", "Sansa"], "Snow" : ["Jon"], "Sannister": ["Jaime", "Cersei", "Tywin"]}))
+# should print {"S": 7}
