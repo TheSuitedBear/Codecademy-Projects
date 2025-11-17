@@ -600,3 +600,69 @@ print(unique_english_letters("mississippi"))
 # should print 4
 print(unique_english_letters("Apple"))
 # should print 4
+
+
+
+# Takes a string and a letter and returns a total of how many times that letter appears in the string.
+
+def count_char_x(word, x):
+  count = 0
+  for letter in word:
+    if letter.lower() == x.lower():
+      count += 1
+    else:
+      continue
+  return f"There is {count} instances of the letter {x} in this string!".format(count=count, x=x)
+
+print(count_char_x("mississippi", "s"))
+# should print "There is 4 instances of the letter s in this string!"
+print(count_char_x("mississippi", "m"))
+# should print "There is 1 instances of the letter m in this string!"
+
+
+
+# Takes a word or string and returns the amount of times a certain amount of multiple characters appears, like "iss" in Mississippi.
+
+def count_multi_char_x(word, x):
+  split_string = word.split(x)
+  return (len(split_string)-1)
+
+print(count_multi_char_x("mississippi", "iss"))
+# should print 2
+print(count_multi_char_x("apple", "pp"))
+# should print 1
+
+
+
+# Takes a word, a starting letter, and an end letter and gives you a sliced string of the letters between the start and end, if neither letter exists in the string, it returns the whole word.
+
+def substring_between_letters(word, start, end):
+  starting_point = word.find(start)
+  ending_point = word.find(end)
+  if starting_point > -1 and ending_point > -1:
+    return(word[starting_point+1:ending_point])
+  else:
+    return word
+
+print(substring_between_letters("apple", "p", "e"))
+# should print "pl"
+print(substring_between_letters("apple", "p", "c"))
+# should print "apple"
+
+
+
+# Takes a string and a number, and returns True if all words in the sentence are equal to or larger in length to the number inputted.
+
+def x_length_words(sentence, x):
+  sliced_sentence = sentence.split(" ")
+  for word in sliced_sentence:
+    if (len(word)) >= x:
+      continue
+    else:
+      return False
+  return True
+
+print(x_length_words("i like apples", 2))
+# should print False
+print(x_length_words("he likes apples", 2))
+# should print True
